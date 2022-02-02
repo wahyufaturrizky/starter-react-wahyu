@@ -10,6 +10,108 @@ import { ColorDaybreakBluePalette, ColorNeutralPalette } from "styles/Colors";
 import { BorderRadiusEnum, MarginEnum, PaddingEnum } from "styles/Spacer";
 import "./App.css";
 import { Modal } from "components/Modal";
+import { Table } from "components/Table";
+
+const columns = [
+  {
+    title: "Name",
+    dataIndex: "name",
+    key: "name",
+  },
+  {
+    title: "Age",
+    dataIndex: "age",
+    key: "age",
+  },
+  {
+    title: "Address",
+    dataIndex: "address",
+    key: "address",
+  },
+];
+
+const dataSource = [
+  {
+    name: "Mike",
+    age: 32,
+    address: "10 Downing Street",
+  },
+  {
+    name: "John",
+    age: 42,
+    address: "10 Downing Street",
+  },
+  {
+    name: "Mike",
+    age: 32,
+    address: "10 Downing Street",
+  },
+  {
+    name: "John",
+    age: 42,
+    address: "10 Downing Street",
+  },
+  {
+    name: "Mike",
+    age: 32,
+    address: "10 Downing Street",
+  },
+  {
+    name: "John",
+    age: 42,
+    address: "10 Downing Street",
+  },
+  {
+    name: "Mike",
+    age: 32,
+    address: "10 Downing Street",
+  },
+  {
+    name: "John",
+    age: 42,
+    address: "10 Downing Street",
+  },
+  {
+    name: "Mike",
+    age: 32,
+    address: "10 Downing Street",
+  },
+  {
+    name: "John",
+    age: 42,
+    address: "10 Downing Street",
+  },
+  {
+    name: "Mike",
+    age: 32,
+    address: "10 Downing Street",
+  },
+  {
+    name: "John",
+    age: 42,
+    address: "10 Downing Street",
+  },
+  {
+    name: "Mike",
+    age: 32,
+    address: "10 Downing Street",
+  },
+  {
+    name: "John",
+    age: 42,
+    address: "10 Downing Street",
+  },
+  {
+    name: "Mike",
+    age: 32,
+    address: "10 Downing Street",
+  },
+  {
+    name: "John",
+    age: 42,
+    address: "10 Downing Street",
+  },
+];
 
 function App() {
   const [isShowBasicModal, setIsShowBasicModal] = useState<boolean>(false);
@@ -596,6 +698,36 @@ function App() {
             >
               <p>asdasd</p>
             </Modal.Basic>
+          </div>
+        </div>
+      </div>
+
+      <div style={{ marginBottom: MarginEnum["5x"] }}>
+        <div
+          style={{
+            border: `2px solid ${ColorNeutralPalette.gray6}`,
+            display: "inline-block",
+            padding: PaddingEnum["2x"],
+            borderStartEndRadius: PaddingEnum["2x"],
+            borderStartStartRadius: PaddingEnum["2x"],
+          }}
+        >
+          <Title level={3} label="Table" />
+        </div>
+
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            border: `2px solid ${ColorNeutralPalette.gray6}`,
+            padding: PaddingEnum["2x"],
+            borderRadius: `${BorderRadiusEnum["0x"]} ${BorderRadiusEnum["2x"]} ${BorderRadiusEnum["2x"]} ${BorderRadiusEnum["2x"]}`,
+          }}
+        >
+          <div style={{ width: "50%" }}>
+            <Title level={4} marginBottom={MarginEnum["3x"]} label="Basic" />
+
+            <Table.Basic dataSource={dataSource} columns={columns} />
           </div>
         </div>
       </div>
