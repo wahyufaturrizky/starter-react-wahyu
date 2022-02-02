@@ -4,12 +4,15 @@ import Image from "components/Image/Image";
 import Input from "components/Input/Input";
 import Text from "components/Typography/Text";
 import Title from "components/Typography/Title";
-import React from "react";
+import AccountCircleIcon from "assets/icons/account_circle.svg";
+import React, { useState } from "react";
 import { ColorDaybreakBluePalette, ColorNeutralPalette } from "styles/Colors";
 import { BorderRadiusEnum, MarginEnum, PaddingEnum } from "styles/Spacer";
 import "./App.css";
+import { Modal } from "components/Modal";
 
 function App() {
+  const [isShowBasicModal, setIsShowBasicModal] = useState<boolean>(false);
   return (
     <div style={{ padding: PaddingEnum["3x"] }}>
       <Title color={ColorDaybreakBluePalette.blue6} textAlign="center">
@@ -447,7 +450,8 @@ function App() {
               marginBottom={MarginEnum["3x"]}
               src="https://yt3.ggpht.com/ytc/AKedOLQxDeFSWxm0J_eZXpTQ3A5sEH6qKJTIEFQ_Qq8vDQ=s900-c-k-c0x00ffffff-no-rj"
             />
-
+          </div>
+          <div style={{ width: "50%" }}>
             <Title
               level={4}
               marginBottom={MarginEnum["3x"]}
@@ -484,7 +488,114 @@ function App() {
           <div style={{ width: "50%" }}>
             <Title level={4} marginBottom={MarginEnum["3x"]} label="Basic" />
 
-            <Input label="Name" type="text" />
+            <Input marginBottom={MarginEnum["3x"]} type="text" />
+
+            <Title level={4} marginBottom={MarginEnum["3x"]} label="Sizes" />
+
+            <Input
+              marginBottom={MarginEnum["3x"]}
+              label="small"
+              size="small"
+              type="text"
+            />
+            <Input
+              marginBottom={MarginEnum["3x"]}
+              label="default"
+              type="text"
+            />
+            <Input
+              marginBottom={MarginEnum["3x"]}
+              label="large"
+              size="large"
+              type="text"
+            />
+          </div>
+          <div
+            style={{
+              width: "50%",
+              padding: `${PaddingEnum["0x"]} ${PaddingEnum["3x"]}`,
+            }}
+          >
+            <Title level={4} marginBottom={MarginEnum["3x"]} label="Disabled" />
+
+            <Input
+              marginBottom={MarginEnum["3x"]}
+              label="disabled"
+              disabled
+              icon={AccountCircleIcon}
+              type="text"
+            />
+
+            <Title
+              level={4}
+              marginBottom={MarginEnum["3x"]}
+              label="Input Icon"
+            />
+
+            <Input
+              marginBottom={MarginEnum["3x"]}
+              label="With Icon"
+              icon={AccountCircleIcon}
+              type="text"
+              size="small"
+            />
+
+            <Input
+              marginBottom={MarginEnum["3x"]}
+              label="With Icon"
+              icon={AccountCircleIcon}
+              type="text"
+            />
+
+            <Input
+              marginBottom={MarginEnum["3x"]}
+              label="With Icon"
+              size="large"
+              icon={AccountCircleIcon}
+              type="text"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div style={{ marginBottom: MarginEnum["5x"] }}>
+        <div
+          style={{
+            border: `2px solid ${ColorNeutralPalette.gray6}`,
+            display: "inline-block",
+            padding: PaddingEnum["2x"],
+            borderStartEndRadius: PaddingEnum["2x"],
+            borderStartStartRadius: PaddingEnum["2x"],
+          }}
+        >
+          <Title level={3} label="Modal" />
+        </div>
+
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            border: `2px solid ${ColorNeutralPalette.gray6}`,
+            padding: PaddingEnum["2x"],
+            borderRadius: `${BorderRadiusEnum["0x"]} ${BorderRadiusEnum["2x"]} ${BorderRadiusEnum["2x"]} ${BorderRadiusEnum["2x"]}`,
+          }}
+        >
+          <div style={{ width: "50%" }}>
+            <Title level={4} marginBottom={MarginEnum["3x"]} label="Basic" />
+
+            <Button.Normal
+              onClick={() => setIsShowBasicModal(true)}
+              label="Modal Basic"
+            />
+
+            <Modal.Basic
+              onCancel={() => setIsShowBasicModal(false)}
+              onOk={() => setIsShowBasicModal(false)}
+              headerTitle="Basic Modal"
+              visible={isShowBasicModal}
+            >
+              <p>asdasd</p>
+            </Modal.Basic>
           </div>
         </div>
       </div>
