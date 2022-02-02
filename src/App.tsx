@@ -1,16 +1,12 @@
 import Button from "components/Button/Button";
 import { Icon } from "components/Icon";
+import Image from "components/Image/Image";
+import Input from "components/Input/Input";
 import Text from "components/Typography/Text";
 import Title from "components/Typography/Title";
 import React from "react";
-import {
-  ColorCalendulaGoldPalette,
-  ColorDaybreakBluePalette,
-  ColorDustRedPalette,
-  ColorNeutralPalette,
-  ColorPolarGreenPalette,
-} from "styles/Colors";
-import { MarginEnum, PaddingEnum, SizeEnum } from "styles/Spacer";
+import { ColorDaybreakBluePalette, ColorNeutralPalette } from "styles/Colors";
+import { BorderRadiusEnum, MarginEnum, PaddingEnum } from "styles/Spacer";
 import "./App.css";
 
 function App() {
@@ -20,6 +16,7 @@ function App() {
         UI Components made in by{" "}
         <a
           style={{ color: ColorDaybreakBluePalette.blue10 }}
+          rel="noreferrer"
           href="https://www.linkedin.com/in/wahyu-fatur-rizky/"
           target="_blank"
         >
@@ -28,9 +25,27 @@ function App() {
       </Title>
 
       <div style={{ marginBottom: MarginEnum["5x"] }}>
-        <Title level={3} marginBottom={MarginEnum["4x"]} label="Buttons" />
+        <div
+          style={{
+            border: `2px solid ${ColorNeutralPalette.gray6}`,
+            display: "inline-block",
+            padding: PaddingEnum["2x"],
+            borderStartEndRadius: PaddingEnum["2x"],
+            borderStartStartRadius: PaddingEnum["2x"],
+          }}
+        >
+          <Title level={3} label="Buttons" />
+        </div>
 
-        <div style={{ display: "flex", flexDirection: "row" }}>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            border: `2px solid ${ColorNeutralPalette.gray6}`,
+            padding: PaddingEnum["2x"],
+            borderRadius: `${BorderRadiusEnum["0x"]} ${BorderRadiusEnum["2x"]} ${BorderRadiusEnum["2x"]} ${BorderRadiusEnum["2x"]}`,
+          }}
+        >
           <div style={{ width: "50%" }}>
             <Title
               level={4}
@@ -85,7 +100,13 @@ function App() {
               label="Loading Button"
             />
 
-            <div style={{ display: "flex", flexDirection: "row" }}>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                marginBottom: MarginEnum["3x"],
+              }}
+            >
               <Button.Normal loading label="Button" />
 
               <Button.Normal
@@ -110,7 +131,7 @@ function App() {
                   <div style={{ marginRight: MarginEnum["1x"] }}>
                     <Icon
                       name="accountCircle"
-                      color={ColorNeutralPalette.gray1}
+                      color={ColorDaybreakBluePalette.blue6}
                     />
                   </div>
                 }
@@ -124,12 +145,50 @@ function App() {
                   <div style={{ marginRight: MarginEnum["1x"] }}>
                     <Icon
                       name="accountCircle"
-                      color={ColorNeutralPalette.gray1}
+                      color={ColorDaybreakBluePalette.blue6}
                     />
                   </div>
                 }
               />
             </div>
+
+            <Title
+              level={4}
+              marginBottom={MarginEnum["3x"]}
+              label="Disabled Button"
+            />
+
+            <Button.Normal
+              marginRight={MarginEnum["3x"]}
+              disabled
+              label="Primary Button (disabled)"
+            />
+
+            <Button.Normal
+              disabled
+              marginRight={MarginEnum["3x"]}
+              variant="secondary"
+              label="Secondary Button (disabled)"
+            />
+            <Button.Normal
+              disabled
+              marginRight={MarginEnum["3x"]}
+              variant="dashed"
+              label="Dashed Button (disabled)"
+            />
+            <Button.Normal
+              disabled
+              marginTop={MarginEnum["3x"]}
+              variant="text"
+              label="Text Button (disabled)"
+            />
+            <Button.Normal
+              disabled
+              marginTop={MarginEnum["3x"]}
+              marginRight={MarginEnum["3x"]}
+              variant="link"
+              label="Link Button (disabled)"
+            />
           </div>
           <div style={{ width: "50%" }}>
             <Title
@@ -233,10 +292,28 @@ function App() {
         </div>
       </div>
 
-      <div>
-        <Title level={3} marginBottom={MarginEnum["4x"]} label="Typography" />
+      <div style={{ marginBottom: MarginEnum["5x"] }}>
+        <div
+          style={{
+            border: `2px solid ${ColorNeutralPalette.gray6}`,
+            display: "inline-block",
+            padding: PaddingEnum["2x"],
+            borderStartEndRadius: PaddingEnum["2x"],
+            borderStartStartRadius: PaddingEnum["2x"],
+          }}
+        >
+          <Title level={3} label="Typography" />
+        </div>
 
-        <div style={{ display: "flex", flexDirection: "row" }}>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            border: `2px solid ${ColorNeutralPalette.gray6}`,
+            padding: PaddingEnum["2x"],
+            borderRadius: `${BorderRadiusEnum["0x"]} ${BorderRadiusEnum["2x"]} ${BorderRadiusEnum["2x"]} ${BorderRadiusEnum["2x"]}`,
+          }}
+        >
           <div style={{ width: "50%" }}>
             <Title level={4} marginBottom={MarginEnum["3x"]} label="Title" />
 
@@ -247,22 +324,22 @@ function App() {
             <Title
               level={2}
               marginBottom={MarginEnum["3x"]}
-              label="h1. Wahyu Fatur Rizki"
+              label="h2. Wahyu Fatur Rizki"
             />
             <Title
               level={3}
               marginBottom={MarginEnum["3x"]}
-              label="h1. Wahyu Fatur Rizki"
+              label="h3. Wahyu Fatur Rizki"
             />
             <Title
               level={4}
               marginBottom={MarginEnum["3x"]}
-              label="h1. Wahyu Fatur Rizki"
+              label="h4. Wahyu Fatur Rizki"
             />
             <Title
               level={5}
               marginBottom={MarginEnum["3x"]}
-              label="h1. Wahyu Fatur Rizki"
+              label="h5. Wahyu Fatur Rizki"
             />
           </div>
 
@@ -337,6 +414,77 @@ function App() {
               target="_blank"
               label="Wahyu Fatur Rizki (link)"
             />
+          </div>
+        </div>
+      </div>
+
+      <div style={{ marginBottom: MarginEnum["5x"] }}>
+        <div
+          style={{
+            border: `2px solid ${ColorNeutralPalette.gray6}`,
+            display: "inline-block",
+            padding: PaddingEnum["2x"],
+            borderStartEndRadius: PaddingEnum["2x"],
+            borderStartStartRadius: PaddingEnum["2x"],
+          }}
+        >
+          <Title level={3} label="Image" />
+        </div>
+
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            border: `2px solid ${ColorNeutralPalette.gray6}`,
+            padding: PaddingEnum["2x"],
+            borderRadius: `${BorderRadiusEnum["0x"]} ${BorderRadiusEnum["2x"]} ${BorderRadiusEnum["2x"]} ${BorderRadiusEnum["2x"]}`,
+          }}
+        >
+          <div style={{ width: "50%" }}>
+            <Title level={4} marginBottom={MarginEnum["3x"]} label="Basic" />
+
+            <Image
+              marginBottom={MarginEnum["3x"]}
+              src="https://yt3.ggpht.com/ytc/AKedOLQxDeFSWxm0J_eZXpTQ3A5sEH6qKJTIEFQ_Qq8vDQ=s900-c-k-c0x00ffffff-no-rj"
+            />
+
+            <Title
+              level={4}
+              marginBottom={MarginEnum["3x"]}
+              label="Placeholder"
+            />
+
+            <Image />
+          </div>
+        </div>
+      </div>
+
+      <div style={{ marginBottom: MarginEnum["5x"] }}>
+        <div
+          style={{
+            border: `2px solid ${ColorNeutralPalette.gray6}`,
+            display: "inline-block",
+            padding: PaddingEnum["2x"],
+            borderStartEndRadius: PaddingEnum["2x"],
+            borderStartStartRadius: PaddingEnum["2x"],
+          }}
+        >
+          <Title level={3} label="Input" />
+        </div>
+
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            border: `2px solid ${ColorNeutralPalette.gray6}`,
+            padding: PaddingEnum["2x"],
+            borderRadius: `${BorderRadiusEnum["0x"]} ${BorderRadiusEnum["2x"]} ${BorderRadiusEnum["2x"]} ${BorderRadiusEnum["2x"]}`,
+          }}
+        >
+          <div style={{ width: "50%" }}>
+            <Title level={4} marginBottom={MarginEnum["3x"]} label="Basic" />
+
+            <Input label="Name" type="text" />
           </div>
         </div>
       </div>
