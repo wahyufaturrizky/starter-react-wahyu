@@ -1,5 +1,4 @@
-import React, { ReactNode } from "react";
-
+import { ReactNode } from "react";
 import ButtonNormal from "./Button.Normal";
 
 const Button = (props: { children: ReactNode }) => {
